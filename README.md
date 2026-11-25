@@ -1,3 +1,5 @@
+<h3>Flappy Bird</h3>
+<br/>
 2026-2027 Unity Başlangıç grupları ilk projesidir.
 
 Hareketli.cs kodunu tüm hareketli objelerde kullanabilirsiniz. 
@@ -18,4 +20,6 @@ Hareketli boruya iki adet BoxCollider2D ekleyin. Birini üst boruya, diğerini a
 Yerdeki çimenler için 2 adet çimeni yan yana koymalısınız. 
 
 Başarılar, İyi Eğlenceler.
+<br/>
+
 <img width="690" height="385" alt="image" src="https://github.com/user-attachments/assets/ae2605e9-fc9c-4509-a85e-d90dbc0d33e0" />
