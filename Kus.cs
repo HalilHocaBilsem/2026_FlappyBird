@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 public class Kus : MonoBehaviour
 {
@@ -17,8 +20,22 @@ public class Kus : MonoBehaviour
 
     void Update()
     {
-        // Eğer space tuşuna basılırsa
+        bool spaceBasildi = false;
+
+#if ENABLE_INPUT_SYSTEM
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            spaceBasildi = true;
+        }
+#elif ENABLE_LEGACY_INPUT_MANAGER
         if (Input.GetKeyDown(KeyCode.Space))
+        {
+            spaceBasildi = true;
+        }
+#endif
+
+        // Eğer space tuşuna basılırsa
+        if (spaceBasildi)
         {
             //rigidbody'e yukarı yönlü kuvvet uygula
             rigidbody.AddForce(Vector2.up * ZiplamaGucu, ForceMode2D.Impulse);
